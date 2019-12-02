@@ -71,7 +71,7 @@ RUN set -x \
     && cp "$W_TMP"/*.dll "$W_SYSTEM64_DLLS"/ \
     && wget -P "$W_TMP" https://github.com/upx/upx/releases/download/v$UPX_VERSION/upx-$UPX_VERSION-win64.zip \
     && unzip "$W_TMP"/upx-$UPX_VERSION-win64.zip \
-    && cp "$W_TMP"/upx-$UPX_VERSION-win64/upx.exe "$W_DRIVE_C"/Python36/upx.exe \
+    && cp "$W_TMP"/upx-$UPX_VERSION-win64/upx.exe "$W_DRIVE_C"/Python37/upx.exe \
     && rm "$W_TMP"/upx-$UPX_VERSION-win64.zip \
     && rm -rf "$W_TMP"/upx-$UPX_VERSION-win
 
