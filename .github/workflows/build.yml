@@ -1,0 +1,33 @@
+name: Build & Push Docker Image
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build_x64_python3:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Build docker-pyinstaller-windows:x64_python3
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: theoklein/pyinstaller-windows
+        username: theoklein
+        password: ${{ secrets.DOCKER_TOKEN }}
+        dockerfile: Dockerfile-py3-win64
+        tags: x64_python3
+        
+  build_x86_python3:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Build docker-pyinstaller-windows:x86_python3
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: theoklein/pyinstaller-windows
+        username: theoklein
+        password: ${{ secrets.DOCKER_TOKEN }}
+        dockerfile: Dockerfile-py3-win32
+        tags: x86_python3
