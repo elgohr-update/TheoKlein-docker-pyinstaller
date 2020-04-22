@@ -31,6 +31,7 @@ fi
 
 cd $WORKDIR
 
+pip install -U setuptools wheel
 if [ -f requirements.txt ]; then
     pip install -r requirements.txt
 fi # [ -f requirements.txt ]
